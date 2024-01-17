@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #050210;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.box1,
+.box2 {
+  border-radius: 50%;
+  
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.box1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+  animation-name: rotate;
+  animation-duration: 0.75s;
+}
+
+.box1:before,
+.box1:after {
+  content: " ";
+  position: absolute;
+  inset: 20px;
+  background: linear-gradient(#050210, #050210);
+  border-radius: inherit;
+}
+
+.box1:before {
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+  filter: blur(65px);
+}
+
+.box2 {
+  animation-duration: 1.40s;
+  transform: translate(-50%, -50%);
+  width: 210px;
+  height: 210px;
+  background: rgba(25,25,80, 0.5);
+  animation-name: pulse;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
